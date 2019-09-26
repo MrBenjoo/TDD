@@ -1,0 +1,14 @@
+3a1
+- statement coverage
+
+4c1
+- 2 1-switch transitions
+- 1 0-switch transition
+- 1 2-switch transition
+
+
+4f1
+- Clock 93%
+- Date 81%
+- Time 81%
+- All classes together = 88%

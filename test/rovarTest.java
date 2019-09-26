@@ -34,10 +34,6 @@ class rovarTest {
         assertNull(rovar.enrov(null));
     }
 
-
-
-
-
     @Test
     void derovAllLowerCase() {
         assertEquals("rovar", rovar.derov("rorovovaror"));

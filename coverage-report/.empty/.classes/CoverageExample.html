@@ -1,0 +1,123 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CoverageExample</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">&lt;empty package name&gt;</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CoverageExample (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CoverageExample</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (1/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    87.5%
+  </span>
+  <span class="absValue">
+    (7/ 8)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><b class="nc"><i>1</i>&nbsp;public class CoverageExample {</b>
+<i>2</i>&nbsp;    /**
+<i>3</i>&nbsp;     * A simple function that should return exactly the provided integer input.
+<i>4</i>&nbsp;     *
+<i>5</i>&nbsp;     * The function below is expected to take in a value and return exactly the
+<i>6</i>&nbsp;     * same value. The manner in which the return value is calculated is
+<i>7</i>&nbsp;     * affected by three boolean values, but regardless of the boolean values
+<i>8</i>&nbsp;     * input, the function should already return the originally provided integer
+<i>9</i>&nbsp;     * value.
+<i>10</i>&nbsp;     *
+<i>11</i>&nbsp;     * The implementation below has a bug, but the bug only manifests itself
+<i>12</i>&nbsp;     * under a specific set of inputs. The intent here is to demonstrate that
+<i>13</i>&nbsp;     * not all test coverage types are sufficient to find all bugs.
+<i>14</i>&nbsp;     *
+<i>15</i>&nbsp;     * @param x
+<i>16</i>&nbsp;     *            the value to be returned.
+<i>17</i>&nbsp;     * @param cond1
+<i>18</i>&nbsp;     *            the boolean that causes x to be incremented when true.
+<i>19</i>&nbsp;     * @param cond2
+<i>20</i>&nbsp;     *            the boolean that causes x to be decremented when true.
+<i>21</i>&nbsp;     * @param cond3
+<i>22</i>&nbsp;     *            the boolean that causes x to be multiplied by 1 when true.
+<i>23</i>&nbsp;     * @return the original value of x.
+<i>24</i>&nbsp;     */
+<i>25</i>&nbsp;    public static int identity(int x, boolean cond1, boolean cond2, boolean cond3) {
+<b class="fc"><i>26</i>&nbsp;        if (cond1) {      // Statement 1 (S1), Branchpoint 1 (B1)</b>
+<b class="fc"><i>27</i>&nbsp;            x++;      // Statement 2 (S2)</b>
+<i>28</i>&nbsp;        }
+<i>29</i>&nbsp;
+<b class="fc"><i>30</i>&nbsp;        if (cond2) {      // Statement 3 (S3), Branchpoint 2 (B2)</b>
+<b class="fc"><i>31</i>&nbsp;            x--;      // Statement 4 (S4)</b>
+<i>32</i>&nbsp;        }
+<i>33</i>&nbsp;
+<b class="fc"><i>34</i>&nbsp;        if (cond3) {      // Statement 5 (S5), Branchpoint 3 (B3)</b>
+<b class="fc"><i>35</i>&nbsp;            x *= 1;   // Statement 6 (S6)</b>
+<i>36</i>&nbsp;        }
+<i>37</i>&nbsp;
+<b class="fc"><i>38</i>&nbsp;        return x;         // Statement 7 (S7)</b>
+<i>39</i>&nbsp;    }
+<i>40</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-09-26 18:55</div>
+</div>
+</body>
+</html>
