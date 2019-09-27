@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -5,63 +6,92 @@ import static org.junit.jupiter.api.Assertions.*;
 class rovarTest {
 
     @Test
-    void enrovAllLowerCase() {
+    void enrov_AllLowerCase() {
         assertEquals("rorovovaror", rovar.enrov("rovar"));
     }
 
     @Test
-    void enrovAllUpperCase() {
-        assertEquals("ROROVOVAROR", rovar.enrov("ROVAR"));
+    void enrov_AllUpperCase() {
+        assertEquals("RoROVoVARoR", rovar.enrov("ROVAR"));
     }
 
     @Test
-    void enrovUpperCaseLowerCaseDifferentCharacters() {
+    void enrov_UpperCaseLowerCaseDifferentCharacters() {
         assertEquals("PoPlolÅnonbobokoksostotjojuvovaRoR",  rovar.enrov("PlÅnbokstjuvaR"));
     }
 
     @Test
-    void enrovDifferentCharacters() {
+    void enrov_DifferentCharacters() {
         assertEquals("poplolånonbobokoksostotjojuvovaror",  rovar.enrov("plånbokstjuvar"));
     }
 
     @Test
-    void enrovEmptyString() {
+    void enrov_EmptyString() {
         assertEquals(" ",  rovar.enrov(" "));
     }
 
     @Test
-    void enrovNullPointer() {
+    void enrov_NullPointer() {
         assertNull(rovar.enrov(null));
     }
 
     @Test
-    void derovAllLowerCase() {
+    void derov_AllLowerCase() {
         assertEquals("rovar", rovar.derov("rorovovaror"));
     }
 
     @Test
-    void derovAllUpperCase() {
+    void derov_AllUpperCase() {
         assertEquals("ROVAR", rovar.derov("ROROVOVAROR"));
     }
 
     @Test
-    void derovUpperCaseLowerCaseDifferentCharacters() {
+    void derov_UpperCaseLowerCaseDifferentCharacters() {
         assertEquals("PlÅnbokstjuvaR",  rovar.derov("PoPlolÅnonbobokoksostotjojuvovaRoR"));
     }
 
+
     @Test
-    void derovDifferentCharacters() {
+    void derov_DifferentCharacters() {
         assertEquals("plånbokstjuvar",  rovar.derov("poplolånonbobokoksostotjojuvovaror"));
     }
 
     @Test
-    void derovEmptyString() {
+    void derov_EmptyString() {
         assertEquals(" ",  rovar.derov(" "));
     }
 
     @Test
-    void derovNullPointer() {
+    void derov_NullPointer() {
         assertNull(rovar.derov(null));
+    }
+
+    @Test
+    void enrov_AllNumbers() {
+        assertEquals("1234567890",  rovar.derov("1234567890"));
+    }
+
+    @Test
+    void derov_AllNumbers() {
+        assertEquals("1234567890",  rovar.derov("1234567890"));
+    }
+
+    @Test
+    void enrov_AllCharacters() {
+        String allCharacters = "!#$%&()*+,-./:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~'";
+
+        String actual = rovar.enrov(allCharacters);
+        String expected = "!#$%&()*+,-./:;<=>?@ABoBCoCDoDEFoFGoGHoHIJoJKoKLoLMoMNoNOPoPQoQRoRSoSToTUVoVWoWXoXYZoZ[]^_`abobcocdodefofgoghohijojkoklolmomnonopopqoqrorsostotuvovwowxoxyzoz{|}~'";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void derov_AllCharacters() {
+        String enrovedString = "!#$%&()*+,-./:;<=>?@ABoBCoCDoDEFoFGoGHoHIJoJKoKLoLMoMNoNOPoPQoQRoRSoSToTUVoVWoWXoXYZoZ[]^_`abobcocdodefofgoghohijojkoklolmomnonopopqoqrorsostotuvovwowxoxyzoz{|}~'";
+        String actual = rovar.derov(enrovedString);
+        String expected = "!#$%&()*+,-./:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~'";
+        assertEquals(expected, actual);
     }
 
 

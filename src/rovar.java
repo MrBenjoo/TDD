@@ -1,8 +1,8 @@
 public final class rovar
 {
 
-    private static String lower_consonants = "bcdfhjklmnpqrstvwxz";
-    private static String upper_consonants = "BCFGHJKLMNPQRSTVWXZ";
+    private static String lower_consonants = "bcdfghjklmnpqrstvwxz";
+    private static String upper_consonants = "BCDFGHJKLMNPQRSTVWXZ";
 
     /// <summary>
     /// Encode the string in rovarspraket.
@@ -19,7 +19,7 @@ public final class rovar
         if (lower_consonants.contains(String.valueOf(c)))
             builder.append(c + "o" + c);
         else if (upper_consonants.contains(String.valueOf(c)))
-            builder.append(c + "O" + c) ;
+            builder.append(c + "o" + c) ;
         else
             builder.append(c);
 
@@ -43,10 +43,16 @@ public final class rovar
         }
 
         for(char c : upper_consonants.toCharArray()){
+            String find = (String.valueOf(c) + "o" + String.valueOf(c));
+            rov = rov.replace(find, String.valueOf(c));
+        }
+
+        for(char c : upper_consonants.toCharArray()){
             String find = (String.valueOf(c) + "O" + String.valueOf(c));
             rov = rov.replace(find, String.valueOf(c));
         }
         return rov;
     }
+
 }
 

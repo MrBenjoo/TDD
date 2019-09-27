@@ -1,14 +1,29 @@
 3a1
 - statement coverage
 
-4c1
-- 2 1-switch transitions
-- 1 0-switch transition
-- 1 2-switch transition
+3c1 - (What is the maximum code coverage you reach when executing your tests?)
+    *
+
+3c2 - (Which defects did you find?)
+    * cant handle uppercase and lowercase letters in derov()
+        - for example derov("PoP") = Pop when it should only contain 1 letter -> P
+    * missing consonants in lower_consonants and upper_consonants
+
+3c3 - (How did you correct the defects?)
+    * added missing consonants
+    * added an extra for-loop in derov() that searches for lowercase o
+      in upper_consonants
+
+3c4 - (Do all test cases pass once the defects have been corrected?)
+    * yes
 
 
-4f1
-- Clock 93%
-- Date 81%
-- Time 81%
-- All classes together = 88%
+4c1 - (How many state transitions (compare 0-switch, 1-switch, etc. mentioned in the lecture) are reasonable to test in this case?)
+    * 5  0-switch transition
+    * 1  1-switch transitions
+
+4f1 - (How much code coverage do you reach with your tests?)
+    * Clock 93%
+    * Date 81%
+    * Time 81%
+    * All classes together = 88%
